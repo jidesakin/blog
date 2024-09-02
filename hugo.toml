@@ -1,0 +1,82 @@
+baseURL = 'https://jideowosakin.com/'
+languageCode = 'en-us'
+title = 'Babajide Owosakin'
+theme = 'typo'
+sectionPagesMenu = 'main'
+
+paginate = 10
+enableRobotsTXT = true
+
+[taxonomies]
+tag = 'tags'
+
+[params]
+
+# Meta description
+description = "software craftsman, husband, father"
+
+# Intro on main page, content is markdown
+# homeIntroTitle = 'Hi!'
+homeIntroContent = """
+software craftsman, husband, father
+"""
+
+# Collection to display on home
+homeCollectionTitle = 'Posts'
+homeCollection = 'posts'
+
+# Lists parameters
+paginationSize = 50
+listSummaries = true
+listDateFormat = '2 Jan 2006'
+
+# Breadcrumbs
+breadcrumbs = true
+
+# Social icons
+[[params.social]]
+name = "github"
+url = "https://github.com/jidesakin"
+
+[[params.social]]
+name = "linkedin"
+url = "https://www.linkedin.com/in/babajideowosakin/"
+
+[[params.social]]
+name = "twitter"
+url = "https://twitter.com/jidesakin_"
+
+[[params.social]]
+name = "email"
+url = "/contact"
+
+[[params.social]]
+name = "rss"
+url = "/index.xml"
+
+# Main menu pages
+[[params.menu]]
+name = "home"
+url = "/"
+
+[[params.menu]]
+name = "posts"
+url = "/posts"
+
+[[params.menu]]
+name = "tags"
+url = "/tags"
+
+[[params.menu]]
+name = "projects"
+url = "/projects"
+
+[[params.menu]]
+name = "about"
+url = "/about"
+
+
+# Syntax highligth on code blocks
+[markup]
+[markup.highlight]
+style = 'bw'
