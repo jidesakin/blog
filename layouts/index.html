@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Babajide Owosakin</title>
+  <meta name="description" content="Software engineer. Building hands-on, shaping product, growing engineers along the way." />
+  <link rel="alternate" type="application/rss+xml" href="/index.xml" title="Babajide Owosakin" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%97%8F%3C/text%3E%3C/svg%3E" />
+  <script>
+    // Apply theme before first paint to avoid FOUC.
+    (function () {
+      try {
+        var stored = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (stored === 'dark' || (!stored && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' };
+  </script>
+  <style>
+    :root {
+      --bg: #faf8f3;
+      --ink: #1a1a1a;
+      --muted: #8a857c;
+      --rule: #e6e2d6;
+      --link: #1a1a1a;
+      --link-hover: #8a857c;
+      --serif: "Iowan Old Style", "Palatino Linotype", "Palatino", "Charter", "Georgia", serif;
+    }
+
+    html.dark {
+      --bg: #131211;
+      --ink: #ecebe5;
+      --muted: #807c73;
+      --rule: #2a2825;
+      --link: #ecebe5;
+      --link-hover: #807c73;
+    }
+
+    /* Theme toggle icon visibility — vanilla CSS, no Tailwind timing dependency */
+    .theme-icon-moon { display: none; }
+    .theme-icon-sun  { display: block; }
+    html.dark .theme-icon-moon { display: block; }
+    html.dark .theme-icon-sun  { display: none; }
+
+    * { box-sizing: border-box; }
+
+    html { font-size: 17px; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--serif);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-feature-settings: "kern", "liga", "onum";
+    }
+
+    main {
+      max-width: 38rem;
+      margin: 0 auto;
+      padding: 6rem 1.5rem 8rem;
+    }
+
+    @media (max-width: 600px) {
+      main { padding: 3.5rem 1.25rem 5rem; }
+      html { font-size: 16.5px; }
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      transition: color .15s ease;
+    }
+
+    a:hover { color: var(--link-hover); }
+
+    p { margin: 0 0 1.1rem; }
+
+    /* Intro */
+    .intro h1 {
+      font-weight: 500;
+      font-size: 1.05rem;
+      margin: 0 0 1.1rem;
+      letter-spacing: -0.005em;
+    }
+
+    .cursor {
+      display: inline-block;
+      margin-left: 1px;
+      font-weight: 300;
+      color: var(--muted);
+      animation: blink 1.05s steps(2) infinite;
+    }
+
+    @keyframes blink { 50% { opacity: 0; } }
+
+    /* Section blocks */
+    .block {
+      margin-top: 3.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    .block h2 {
+      font-weight: 500;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 1.5rem;
+    }
+
+    .block ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .block li { margin-bottom: 1.4rem; }
+    .block li:last-child { margin-bottom: 0; }
+
+    .item-title {
+      display: inline-block;
+      font-weight: 500;
+    }
+
+    .item-desc {
+      color: var(--muted);
+      font-style: italic;
+      margin: 0.1rem 0 0;
+    }
+
+    /* Elsewhere row */
+    .elsewhere-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 1.6rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .elsewhere-links li { margin: 0 0 0.4rem; }
+
+    .contact {
+      margin-top: 0.4rem;
+    }
+
+    .contact .email-row {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin: 0 0 0.4rem;
+    }
+
+    .copy-btn {
+      appearance: none;
+      background: none;
+      border: 1px solid var(--rule);
+      border-radius: 999px;
+      color: var(--muted);
+      font: inherit;
+      font-size: 0.78rem;
+      padding: 0.1rem 0.6rem;
+      cursor: pointer;
+      transition: color .15s ease, border-color .15s ease;
+    }
+
+    .copy-btn:hover {
+      color: var(--ink);
+      border-color: var(--muted);
+    }
+
+    .copy-btn[data-copied="true"] {
+      color: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .footnote {
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-style: italic;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <button
+    id="theme-toggle"
+    type="button"
+    aria-label="Toggle color theme"
+    class="fixed top-4 right-4 z-10 p-2 rounded-full text-[var(--muted)] hover:text-[var(--ink)] hover:bg-black/5 dark:hover:bg-white/10 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--muted)]"
+  >
+    <!-- Sun: shown in light mode (click to switch to dark) -->
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="theme-icon-sun w-5 h-5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+    </svg>
+    <!-- Moon: shown in dark mode (click to switch to light) -->
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="theme-icon-moon w-5 h-5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+    </svg>
+  </button>
+
+  <main>
+    <header class="intro">
+      <h1>Hi, I'm Jide<span class="cursor" aria-hidden="true">|</span>.</h1>
+
+      <p>I make software for the internet. I've spent over a decade doing it &mdash; across startups and at scale, in teams large and small.</p>
+
+      <p>I'm at my best when I'm building hands-on, shaping the products I work on, and growing engineers along the way.</p>
+
+      <p>At the moment, I lead the Reviews team at <a href="https://www.getyourguide.com">GetYourGuide</a>. Based in Germany.</p>
+
+      <p>Outside of work I run, cycle, play piano, take pictures, and document life as I go.</p>
+    </header>
+
+    <section class="block">
+      <h2>Currently</h2>
+      <ul>
+        <li>
+          <a class="item-title" href="https://www.getyourguide.com">GetYourGuide</a>
+          <p class="item-desc">Building trust into how travelers choose experiences.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2>Projects</h2>
+      <ul>
+        <li>
+          <a class="item-title" href="https://propklar.com">Propklar</a>
+          <p class="item-desc">Your property. Your visibility. From anywhere.</p>
+        </li>
+        <li>
+          <a class="item-title" href="https://homeklar.com">Homeklar</a>
+          <p class="item-desc">Your home. Organized. Finally.</p>
+        </li>
+        <li>
+          <a class="item-title" href="https://github.com/techstarta">Techstarta</a>
+          <p class="item-desc">Real-world tech experience for early-career builders.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2>Notes &amp; Essays</h2>
+      <ul>
+        <li>
+          <a class="item-title" href="https://diaryofthebrave.substack.com/p/living-out-your-values-setting-meaningful">Goals setting and Values</a>
+          <p class="item-desc">On chasing what's meaningful, not just what's measurable.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2>Personal</h2>
+      <ul>
+        <li>
+          <a class="item-title" href="https://www.instagram.com/pauseand.wonder/">Pause and wonder</a>
+          <p class="item-desc">A photo diary. Frames worth slowing down for.</p>
+        </li>
+        <li>
+          <a class="item-title" href="https://diaryofthebrave.substack.com">Diary of the brave</a>
+          <p class="item-desc">Notes on living deliberately.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="block contact">
+      <h2>Elsewhere</h2>
+      <ul class="elsewhere-links">
+        <li><a href="https://www.linkedin.com/in/babajideowosakin/">LinkedIn</a></li>
+        <li><a href="https://github.com/jidesakin">GitHub</a></li>
+        <li><a href="https://twitter.com/jidesakin_">Twitter</a></li>
+        <li><a href="https://diaryofthebrave.substack.com">Substack</a></li>
+      </ul>
+
+      <p class="email-row">
+        <a href="mailto:hey@jideowosakin.com" id="email-link">hey@jideowosakin.com</a>
+        <button type="button" class="copy-btn" id="copy-btn" data-copy="hey@jideowosakin.com">Click to copy</button>
+      </p>
+      <p class="footnote">Best reached by email. Selectively open to new opportunities.</p>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var toggle = document.getElementById('theme-toggle');
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          var isDark = document.documentElement.classList.toggle('dark');
+          try { localStorage.setItem('theme', isDark ? 'dark' : 'light'); } catch (e) {}
+        });
+      }
+
+      var btn = document.getElementById('copy-btn');
+      if (!btn) return;
+      btn.addEventListener('click', function () {
+        var value = btn.getAttribute('data-copy');
+        var done = function () {
+          btn.setAttribute('data-copied', 'true');
+          btn.textContent = 'Copied';
+          setTimeout(function () {
+            btn.removeAttribute('data-copied');
+            btn.textContent = 'Click to copy';
+          }, 1600);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(value).then(done).catch(function () {});
+        } else {
+          var t = document.createElement('textarea');
+          t.value = value;
+          document.body.appendChild(t);
+          t.select();
+          try { document.execCommand('copy'); done(); } catch (e) {}
+          document.body.removeChild(t);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
